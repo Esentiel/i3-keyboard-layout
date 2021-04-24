@@ -4,7 +4,7 @@ set -e
 
 get_kbdlayout() {
   layout=$(setxkbmap -query | grep 'layout:' | awk '{print substr($0, length($0)-1)}')
-  variant=$(setxkbmap -query | grep 'layout:' | awk '{print substr($0, length($0)-1)}')
+  variant=$(setxkbmap -query | grep 'variant:' | awk '{print substr($0, length($0)-1)}')
   echo "$layout" "$variant"
 }
 
